@@ -5,6 +5,10 @@ const axios = require('axios');
 
 app.set('port', process.env.PORT || 3000);
 
+app.listen(app.get('port'), ()=>{
+    console.log('Server on port', app.get('port'));
+})
+
 app.get('/', async (req, res) => {
     let data = null;
     let config = {
@@ -26,7 +30,4 @@ app.get('/', async (req, res) => {
     })
 
     
-})
-app.listen(app.get('port'), ()=>{
-    console.log('Server on port', app.get('port'));
 })
